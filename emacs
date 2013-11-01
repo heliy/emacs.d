@@ -33,4 +33,27 @@
 ;;颜色设置
 (require 'color-theme)
 (color-theme-initialize)
-(color-theme-jsc-dark)
+(color-theme-pok-wob)
+
+;;关闭滚动条
+(set-scroll-bar-mode nil)
+
+;;高亮当前行  
+(require 'hl-line)  
+(global-hl-line-mode t)
+
+;;显示图片  
+(auto-image-file-mode t)
+
+;;隐藏menu
+(menu-bar-mode nil) 
+
+
+;f11 -> 全屏
+(global-set-key [f11] 'my-fullscreen)
+(defun my-fullscreen ()
+  (interactive)
+  (x-send-client-message
+   nil 0 nil "_NET_WM_STATE" 32
+   '(2 "_NET_WM_STATE_FULLSCREEN" 0))
+)
