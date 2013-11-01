@@ -57,3 +57,10 @@
    nil 0 nil "_NET_WM_STATE" 32
    '(2 "_NET_WM_STATE_FULLSCREEN" 0))
 )
+
+;;切换窗口
+;;(windmove-default-keybindings)
+;; 用switch-window
+(global-set-key (kbd "C-x o") 'switch-window)
+(require 'switch-window)
+
