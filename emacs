@@ -29,3 +29,8 @@
 
 ;;能复制至系统剪切板
 (setq x-select-enable-clipboard t)
+
+;;颜色设置
+(require 'color-theme)
+(color-theme-initialize)
+(color-theme-jsc-dark)
