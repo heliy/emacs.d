@@ -6,4 +6,8 @@ mode:
 - switch-window
 - ipython
 - autopair
+- w3m
+- elpy
+-
+- tabbar
 - ~~aozora-view~~
