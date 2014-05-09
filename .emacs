@@ -196,3 +196,6 @@ scroll-conservatively 10000)
 ;; rainbow-mode (https://github.com/emacsmirror/rainbow-mode)
 (add-to-list 'load-path "~/.emacs.d/for-web/")
 (require 'rainbow-mode)
+(define-globalized-minor-mode my-global-rainbow-mode rainbow-mode
+  (lambda () (rainbow-mode 1)))
+(my-global-rainbow-mode 1)
