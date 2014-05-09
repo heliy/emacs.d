@@ -8,6 +8,5 @@ mode:
 - autopair
 - w3m
 - elpy
--
 - tabbar
 - ~~aozora-view~~

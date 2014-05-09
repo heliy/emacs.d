@@ -140,11 +140,11 @@ scroll-conservatively 10000)
 (setq w3m-view-this-url-new-session-in-background t)
 
 ;;epy
-;;(load-file "~/.emacs.d/for-python/epy-init.el")
+;(load-file "~/.emacs.d/for-python/epy-init.el")
 
 ;;elpy
-(package-initialize)
-(elpy-enable)
+;(package-initialize)
+;(elpy-enable)
 
 ;;tarbar
 (require 'tabbar)
@@ -174,3 +174,25 @@ scroll-conservatively 10000)
                     :box '(:line-width 3 :color "gray"))
 ;; USEFUL: set tabbar's separator gap
 (custom-set-variables '(tabbar-separator (quote (1.5))))
+
+;; C-return 选中区域
+(define-key global-map [C-return] 'set-mark-command)
+
+;; html/css
+;; zencoding (https://github.com/rooney/zencoding)
+(add-to-list 'load-path "~/.emacs.d/for-web/zencoding/")
+(require 'zencoding-mode)
+;; Auto-start on any markup mode
+(add-hook 'sgml-mode-hook 'zencoding-mode)
+;; multi-web-mode (https://github.com/fgallina/multi-web-mode)
+(add-to-list 'load-path "~/.emacs.d/for-web/multi-web-mode/")
+(require 'multi-web-mode)
+(setq mweb-default-major-mode 'html-mode)
+(setq mweb-tags '((php-mode "<\\?php\\|<\\? \\|<\\?=" "\\?>")
+                  (js-mode "<script +\\(type=\"text/javascript\"\\|language=\"javascript\"\\)[^>]*>" "</script>")
+                  (css-mode "<style +type=\"text/css\"[^>]*>" "</style>")))
+(setq mweb-filename-extensions '("php" "htm" "html" "ctp" "phtml" "php4" "php5"))
+(multi-web-global-mode 1)
+;; rainbow-mode (https://github.com/emacsmirror/rainbow-mode)
+(add-to-list 'load-path "~/.emacs.d/for-web/")
+(require 'rainbow-mode)
